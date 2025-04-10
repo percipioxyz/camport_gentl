@@ -2,7 +2,7 @@
 This software development kit provides GenTL Producer for Halcon to use Percipio Cameras.
 
 ## Documents
-Please refer to [http://doc.percipio.xyz/cam/latest/getstarted/sdk-compile.html#id27](http://doc.percipio.xyz/cam/latest/getstarted/sdk-compile.html#id27) for more details.
+Please refer to [https://doc.percipio.xyz/cam/latest/getstarted/sdk-halcon-compile.html](https://doc.percipio.xyz/cam/latest/getstarted/sdk-halcon-compile.html) for more details.
 
 ## Halcon GenTL Producer Files
 ```

@@ -1,0 +1,24 @@
+R1.1.2
+相比R1.0.x，R1.1.x主要是标准化相关的改动，目标是尽量与GenICam SFNC文件靠近。
+
+1. Gain设置：先用GainSelector选择Gain类型，再用Gain读写具体数值，数值使用浮点数
+2. ExposureTime设置：改用us为单位的浮点数，需依赖新固件完成换算
+3. Trig设置：仅支持软触发和硬触发且不作区分，使用TriggerMode属性开启或关闭触发，使用TriggerSoftware发送软触发
+4. 支持AE_TARGET_Y以及最大最小值
+5. Trig延时设置：使用TriggerDelay属性设置，数值为单位us的浮点数
+6. KeepAliveOnoff/KeepAliveTimeout修改为DeviceLinkHeartbeatMode/DeviceLinkHeartbeatTimeout
+7. PacketDelay/PacketSize修改为GevSCPD/GevSCPSPacketSize
+8. PersistentIP/PersistentNetmask/PersistentGateway修改为GevPersistentIPAddress/GevPersistentSubnetMask/GevPersistentDefaultGateway
+9. NtpServerIP由点分十进制字符串修改为整数类型
+10. SourceSelector/SourceMode修改为SourceSelector/ComponentEnable
+11. 取消ImageMode设置，仅支持相机的最大分辨率，以及原本支持的二分之一、四分之一等分辨率，缩减比例通过BinningHorizontal或BinningVertical设置
+12. 支持通过Width/Height读取图像分辨率，修改BinningHorizontal/BinningVertical后Width/Height属性会自动变化
+13. 支持通过PixelFormat读取格式，IR仅支持Mono8和Mono16，Color仅支持RGB8，Depth仅支持Coord3D_ABC32f（点云）。
+14. 对应sdk升级至3.6.71
+15. 支持FlashLightIntensity最大最小值
+16. 支持FlashLight RGB
+17. 支持PresetMode
+18. 支持TofAntiInterference
+19. 支持读取温度
+20. 解决ROI不生效问题
+

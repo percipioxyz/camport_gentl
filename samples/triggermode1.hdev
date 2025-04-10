@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hdevelop file_version="1.2" halcon_version="20.11.3.0">
+<hdevelop file_version="1.2" halcon_version="24.05.0.0">
 <procedure name="main">
 <interface/>
 <body>
@@ -32,9 +32,7 @@
 <l>get_framegrabber_param(AcqHandle, 'SourceSelector_values', SourceSelectorValues)</l>
 <l>for Index := 0 to |SourceSelectorValues| - 1 by 1</l>
 <l>    set_framegrabber_param(AcqHandle, 'SourceSelector', SourceSelectorValues[Index])</l>
-<l>    get_framegrabber_param(AcqHandle, 'ImageMode_values', ImageModeValues)</l>
-<l>    set_framegrabber_param(AcqHandle, 'ImageMode', ImageModeValues[0])</l>
-<l>    set_framegrabber_param(AcqHandle, 'SourceMode', 'On')</l>
+<l>    set_framegrabber_param(AcqHandle, 'ComponentEnable', true)</l>
 <l>endfor</l>
 <c>*</c>
 <c>* Open 4 Windows for IR Left/IR Right/RGB/3D</c>
@@ -49,7 +47,7 @@
 <c></c>
 <c>*</c>
 <c>* Set Trigger Mode</c>
-<l>set_framegrabber_param(AcqHandle, 'TriggerModeInt', 'TriggerMode_slave')</l>
+<l>set_framegrabber_param(AcqHandle, 'TriggerMode', 'On')</l>
 <c>*</c>
 <c>* Start acquisition</c>
 <l>grab_image_start(AcqHandle, -1)</l>

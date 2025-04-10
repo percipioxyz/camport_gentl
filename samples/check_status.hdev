@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hdevelop file_version="1.2" halcon_version="20.11.3.0">
+<hdevelop file_version="1.2" halcon_version="24.05.0.0">
 <procedure name="main">
 <interface/>
 <body>
@@ -26,8 +26,8 @@
 <c></c>
 <l>dev_open_window (200, 200, 640, 480, 'black', WindowHandleColor)</l>
 <c></c>
-<l>set_framegrabber_param(AcqHandle, 'SourceSelector', 'Source_Color')</l>
-<l>set_framegrabber_param(AcqHandle, 'SourceMode', 'On')    </l>
+<l>set_framegrabber_param(AcqHandle, 'SourceSelector', 'Source_Depth')</l>
+<l>set_framegrabber_param(AcqHandle, 'ComponentEnable', true)</l>
 <c></c>
 <l>while (1) </l>
 <l>    try</l>

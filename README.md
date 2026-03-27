@@ -6,9 +6,10 @@ Please refer to [https://doc.percipio.xyz/cam/latest/getstarted/sdk-halcon-compi
 
 ## Halcon GenTL Producer Files
 ```
-+---percipio.cti        Implementation of Percipio GenTL Producer
-+---samples             sample script in Halcon
-+---tycam.dll           Percipio SDK depended on by the Producer
++-win_x64/percipio.cti       Implementation of Percipio GenTL Producer for windows x64
++-linux_x64/percipio.cti     Implementation of Percipio GenTL Producer for linux x64
++-halcon_samples             sample script in Halcon
++-Release.log                Release log for this repo 
 ```
 
 ## Supported Platform

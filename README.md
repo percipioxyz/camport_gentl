@@ -1,4 +1,4 @@
-# camport3_halcon_gentl
+# camport3_gentl
 This software development kit provides GenTL Producer for Halcon to use Percipio Cameras.
 
 ## Documents

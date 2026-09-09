@@ -31,21 +31,21 @@
 <c>*</c>
 <c>* Enable all sources</c>
 <l>dev_set_check('~give_error')</l>
-<l>set_framegrabber_param(AcqHandle1, 'SourceSelector', 'Left')</l>
+<l>set_framegrabber_param(AcqHandle1, 'SourceSelector', 'Source2')</l>
 <l>set_framegrabber_param(AcqHandle1, 'ComponentEnable', true)</l>
-<l>set_framegrabber_param(AcqHandle1, 'SourceSelector', 'Right')</l>
+<l>set_framegrabber_param(AcqHandle1, 'SourceSelector', 'Source3')</l>
 <l>set_framegrabber_param(AcqHandle1, 'ComponentEnable', true)</l>
-<l>set_framegrabber_param(AcqHandle1, 'SourceSelector', 'Texture')</l>
+<l>set_framegrabber_param(AcqHandle1, 'SourceSelector', 'Source1')</l>
 <l>set_framegrabber_param(AcqHandle1, 'ComponentEnable', true)</l>
-<l>set_framegrabber_param(AcqHandle1, 'SourceSelector', 'Depth')</l>
+<l>set_framegrabber_param(AcqHandle1, 'SourceSelector', 'Source0')</l>
 <l>set_framegrabber_param(AcqHandle1, 'ComponentEnable', true)</l>
-<l>set_framegrabber_param(AcqHandle2, 'SourceSelector', 'Left')</l>
+<l>set_framegrabber_param(AcqHandle2, 'SourceSelector', 'Source2')</l>
 <l>set_framegrabber_param(AcqHandle2, 'ComponentEnable', true)</l>
-<l>set_framegrabber_param(AcqHandle2, 'SourceSelector', 'Right')</l>
+<l>set_framegrabber_param(AcqHandle2, 'SourceSelector', 'Source3')</l>
 <l>set_framegrabber_param(AcqHandle2, 'ComponentEnable', true)</l>
-<l>set_framegrabber_param(AcqHandle2, 'SourceSelector', 'Texture')</l>
+<l>set_framegrabber_param(AcqHandle2, 'SourceSelector', 'Source1')</l>
 <l>set_framegrabber_param(AcqHandle2, 'ComponentEnable', true)</l>
-<l>set_framegrabber_param(AcqHandle2, 'SourceSelector', 'Depth')</l>
+<l>set_framegrabber_param(AcqHandle2, 'SourceSelector', 'Source0')</l>
 <l>set_framegrabber_param(AcqHandle2, 'ComponentEnable', true)</l>
 <c></c>
 <l>dev_update_off()</l>
@@ -159,12 +159,12 @@
 <par name="Height" base_type="ctrl" dimension="0"/>
 </ic>
 <oc>
-<par name="Window3DHande" base_type="ctrl" dimension="0"/>
+<par name="Window3DHandle" base_type="ctrl" dimension="0"/>
 </oc>
 </interface>
 <body>
-<l>            dev_open_window (0, 2*Width, Width, Height, 'black', Window3DHande)</l>
-<l>            dev_set_window (Window3DHande)</l>
+<l>            dev_open_window (0, 2*Width, Width, Height, 'black', Window3DHandle)</l>
+<l>            dev_set_window (Window3DHandle)</l>
 <l>            dev_set_lut('default')</l>
 <l>return ()</l>
 </body>
@@ -172,7 +172,7 @@
 <parameters>
 <parameter id="Height"/>
 <parameter id="Width"/>
-<parameter id="Window3DHande"/>
+<parameter id="Window3DHandle"/>
 </parameters>
 </docu>
 </procedure>

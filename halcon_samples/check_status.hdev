@@ -26,7 +26,7 @@
 <c></c>
 <l>dev_open_window (200, 200, 640, 480, 'black', WindowHandleColor)</l>
 <c></c>
-<l>set_framegrabber_param(AcqHandle, 'SourceSelector', 'Depth')</l>
+<l>set_framegrabber_param(AcqHandle, 'SourceSelector', 'Source0')</l>
 <l>set_framegrabber_param(AcqHandle, 'ComponentEnable', true)</l>
 <c></c>
 <l>while (1) </l>

@@ -46,6 +46,7 @@
 <c>*</c>
 <c>* Configure 3D-settings</c>
 <l>set_framegrabber_param (AcqHandle, 'create_objectmodel3d', 'enable')</l>
+<c></c>
 <c>*</c>
 <c>* Start acquisition</c>
 <l>grab_image_start(AcqHandle, -1)</l>
@@ -121,12 +122,12 @@
 <par name="Height" base_type="ctrl" dimension="0"/>
 </ic>
 <oc>
-<par name="Window3DHande" base_type="ctrl" dimension="0"/>
+<par name="Window3DHandle" base_type="ctrl" dimension="0"/>
 </oc>
 </interface>
 <body>
-<l>            dev_open_window (0, 2*Width, Width, Height, 'black', Window3DHande)</l>
-<l>            dev_set_window (Window3DHande)</l>
+<l>            dev_open_window (0, 2*Width, Width, Height, 'black', Window3DHandle)</l>
+<l>            dev_set_window (Window3DHandle)</l>
 <l>            dev_set_lut('default')</l>
 <l>return ()</l>
 </body>
@@ -134,7 +135,7 @@
 <parameters>
 <parameter id="Height"/>
 <parameter id="Width"/>
-<parameter id="Window3DHande"/>
+<parameter id="Window3DHandle"/>
 </parameters>
 </docu>
 </procedure>

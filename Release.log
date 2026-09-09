@@ -1,6 +1,21 @@
+R2.1.12
+1.新增Aarch64 架构支持
+2.更新AlignMode 节点文本描述
+3.更新设备枚举逻辑，多线程搜索设备
+4.更新 halcon samples 存储路径，新增 halcon_samples目录，用于存放 halcon 相关样本代码
+5.更新 SharedDeviceState.cpp 中对 PixelFormat 节点的处理逻辑，替换所有pSelected 为 RawPixelFormat
+6.更新导出的XML文件名
+7.更新导出XML节点，删除以下节点：
+    IntrinsicValueSelector           IntrinsicValue
+    RectifiedIntrinsicValueSelector  RectifiedIntrinsicValue
+    RotationValueSelector            RotationValue
+    DistortionValueSelector          DistortionValue
+    ExtrinsicValueSelector           ExtrinsicValue
+8.更新gentl interface/devices 枚举逻辑(旧版本仅在open时枚举一次，新版本每次TLUpdateInterfaceList / IFUpdateDeviceList 调用时枚举)
+
 R2.1.7
 1. 支持4.0的相机,从相机网络流层实现更加满足GenICam标准
-1. 支持Linux平台的CTI发布
+2. 支持Linux平台的CTI发布
 
 R1.1.2
 相比R1.0.x，R1.1.x主要是标准化相关的改动，目标是尽量与GenICam SFNC文件靠近。

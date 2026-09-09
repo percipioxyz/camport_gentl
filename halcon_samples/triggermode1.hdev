@@ -50,17 +50,23 @@
 <l>set_framegrabber_param(AcqHandle, 'AcquisitionMode', 'SingleFrame')</l>
 <l>set_framegrabber_param(AcqHandle, 'TriggerSource', 'Software')</l>
 <c></c>
-<c>* For some older camera models, the method described above is ineffective, and the trigger mode can only be set using the following method.</c>
-<l>* set_framegrabber_param(AcqHandle, 'TriggerMode', 'On')</l>
-<c></c>
 <c>*</c>
 <c>* Start acquisition</c>
 <l>grab_image_start(AcqHandle, -1)</l>
 <l>while (1)</l>
 <c>    * Send Soft Trigger</c>
 <l>    set_framegrabber_param(AcqHandle, 'TriggerSoftware', 1)</l>
-<c>    *</c>
-<l>    grab_data_async (Images, Region, Contours, AcqHandle, -1, ObjectModel3D)</l>
+<c>    </c>
+<l>    catch_grab_error := []</l>
+<l>    try</l>
+<l>        grab_data_async (Images, Region, Contours, AcqHandle, -1, ObjectModel3D)</l>
+<l>    catch (Exception)</l>
+<l>        catch_grab_error := Exception</l>
+<l>    endtry</l>
+<l>    if (|catch_grab_error| &gt; 0)</l>
+<l>        dev_disp_text ('grab_data_async failed: ' + catch_grab_error[0], 'window', 12, 12, 'red', 'true', [])</l>
+<l>        continue</l>
+<l>    endif</l>
 <c>    *</c>
 <l>    get_framegrabber_param(AcqHandle, 'image_source_id', image_source_id)</l>
 <l>    Depth := false</l>
@@ -85,8 +91,8 @@
 <l>        disp_object_model_3d (WindowHandles[|WindowHandles| - 1], ObjectModel3D, [], [], ['color_attrib','lut','point_size'], ['coord_z','rainbow',1])</l>
 <l>        dev_disp_text ('3D', 'window', 12, 12, 'black', [], [])</l>
 <l>        if (VisualizeOM3D)</l>
-<l>            create_3d_window (Width, Height, Window3DHande)</l>
-<l>            visualize_object_model_3d (Window3DHande, ObjectModel3D, [], [], ['color_attrib','lut','point_size'], ['coord_z','rainbow',1], 'ObjectModel3D', [], [], PoseItem)</l>
+<l>            create_3d_window (Width, Height, Window3DHandle)</l>
+<l>            visualize_object_model_3d (Window3DHandle, ObjectModel3D, [], [], ['color_attrib','lut','point_size'], ['coord_z','rainbow',1], 'ObjectModel3D', [], [], PoseItem)</l>
 <l>        endif</l>
 <l>    endif</l>
 <l>endwhile</l>
@@ -135,12 +141,12 @@
 <par name="Height" base_type="ctrl" dimension="0"/>
 </ic>
 <oc>
-<par name="Window3DHande" base_type="ctrl" dimension="0"/>
+<par name="Window3DHandle" base_type="ctrl" dimension="0"/>
 </oc>
 </interface>
 <body>
-<l>            dev_open_window (0, 2*Width, Width, Height, 'black', Window3DHande)</l>
-<l>            dev_set_window (Window3DHande)</l>
+<l>            dev_open_window (0, 2*Width, Width, Height, 'black', Window3DHandle)</l>
+<l>            dev_set_window (Window3DHandle)</l>
 <l>            dev_set_lut('default')</l>
 <l>return ()</l>
 </body>
@@ -148,7 +154,7 @@
 <parameters>
 <parameter id="Height"/>
 <parameter id="Width"/>
-<parameter id="Window3DHande"/>
+<parameter id="Window3DHandle"/>
 </parameters>
 </docu>
 </procedure>
